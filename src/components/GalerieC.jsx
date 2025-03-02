@@ -22,8 +22,8 @@ function GalerieC() {
         { 
           titre: "Pluie de de météor", 
           info: "Info de la video 1",
-          image: "../src/assets/img/PluieMeteor.png", 
-          video: "../src/assets/video/PluieDeMeteor.mp4", 
+          image: "../assets/img/PluieMeteor.png", 
+          video: "../assets/video/PluieDeMeteor.mp4", 
           nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
           icones: [ 
             Houdini3D, 
@@ -36,8 +36,8 @@ function GalerieC() {
         { 
           titre: "Homme Sable", 
           info: "Info de la video 2",
-          image: "../src/assets/img/HommeSable.png", 
-          video: "../src/assets/video/HommeSable.mp4",
+          image: "../assets/img/HommeSable.png", 
+          video: "../assets/video/HommeSable.mp4",
           nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
           icones: [ 
             Houdini3D,
@@ -51,8 +51,8 @@ function GalerieC() {
         { 
           titre: "Cube de fumé", 
           info: "Info de la video 3",
-          image: "../src/assets/img/CubeFumée.png", 
-          video: "../src/assets/video/Move+Fumée.mp4",
+          image: "../assets/img/CubeFumée.png", 
+          video: "../assets/video/Move+Fumée.mp4",
           nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
           icones: [ 
             Houdini3D, 
@@ -65,8 +65,8 @@ function GalerieC() {
         { 
           titre: "Tentative de tesseract", 
           info: "Info de la video 4",
-          image: "../src/assets/img/ImgTentTésseract0.jpg", 
-          video: "../src/assets/video/Tentative Tesseract.mp4",
+          image: "../assets/img/ImgTentTésseract0.jpg", 
+          video: "../assets/video/Tentative Tesseract.mp4",
           nomLog: ["Houdini", "After Effects"],
           icones: [ 
             Houdini3D, 
