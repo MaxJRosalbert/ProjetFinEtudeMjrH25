@@ -1,0 +1,264 @@
+.galerie {
+  text-align: center;
+  padding: $PaddindDefaut;
+
+  .TitreGalerie {
+    width: $WBento;
+    margin: 2rem auto;
+    padding: $PaddindDefaut;
+    background-color: $CouleurGC;
+    border-radius: $BordureBento;
+    box-shadow: $OmbrePc;
+    text-align: center;
+  
+    h1 {
+      color: $CouleurTexteS;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      font-size: 1.1rem;
+      color: $CouleurTexteS;
+      line-height: 1.6;
+    }
+  }
+
+  .GrilleCartes {
+    width: $WBento;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  
+    .Carte {
+      width: 185px;
+      aspect-ratio: $FormatV;
+      background-color: $CouleurAccent2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $BordureBento;
+      border: outset $CouleurAccent1 5px;
+      box-shadow: $OmbrePS, $OmbrePS;
+      margin: 2rem auto;
+      
+      .ContenueCarte {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .TitreCarte {
+          width: 100%;
+          height: 15%;
+          background-color: rgba(255, 255, 255, 0.75);
+          color: $CouleurTexteS;
+          border-radius: 30px 30px 0 0;
+          place-content: center;
+          font-size: 0.75rem;
+          margin: 0;
+          
+        }
+        
+        .Decor {
+          width: 85%;
+          aspect-ratio: $FormatV;
+          border-radius: 0 0 $BordureBento $BordureBento;
+          box-shadow: $OmbrePS;
+          background-color: $CouleurB;
+          object-fit: cover;
+
+        }
+  
+        .Pied2Carte {
+          width: 80%;
+          height: 25%;
+          border-radius: 0 0 $BordureBento $BordureBento;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10%;
+          justify-content: space-around;
+          display: none;
+        }
+      }
+
+      &:hover {
+        box-shadow: none;
+        border: outset $CouleurAccent2 5px;
+        background-color: $CouleurAccent1;
+        cursor: pointer;
+
+        .Decor {
+          width: 80%;
+          aspect-ratio: 3/4;
+        }
+
+        .Pied2Carte {
+          display: flex;
+
+          .BulleLog {
+            width: 17.5%;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20vh;
+
+    .LecteurVideoMobile {
+      width: 85%;
+      aspect-ratio: $FormatV;
+      background-color: $CouleurAccent2;
+      border-radius: $BordureBento;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .TitreInfoCarteV {
+        width: 100%;
+        height: 15%;
+        background-color: rgba(255, 255, 255, 0.75);
+        color: $CouleurTexteS;
+        border-radius: 30px 30px 0 0;
+        place-content: center;
+        margin: 0;
+      }
+
+      video {
+        width: 100%;
+        aspect-ratio: $FormatH;
+      }
+
+      .TxtInfoCarteV {
+        width: 100%;
+        aspect-ratio: 5/4;
+        background-color: aliceblue;
+        overflow-y: scroll;
+        padding: 5%;
+        color: $CouleurTexteS;
+        text-align: start;
+      }
+
+      .Pied2PageInfoCarteV {
+        width: 100%;
+        height: 35%;
+        background-color: rgba(199, 41, 41, 0.75);
+        border-radius: 0 0 $BordureBento $BordureBento;
+
+        .BlocLog {
+          width: 100%;
+          height: 80%;
+          overflow-y: scroll;
+
+          .logicielUtil {
+            padding: 0 $PaddindDefaut 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h5 {
+              color: $CouleurTexteS;
+            }
+
+            .BulleLog {
+              width: 15%;
+              // aspect-ratio: $AspectRatioItem;
+              // background-color: $CouleurFondC;
+              // border-radius: $PetitBordureBento;
+            }
+          }
+        }
+      }
+    }
+
+    .LecteurVideoD {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .LecteurVideoMobile {
+      display: none;
+    }
+
+    .LecteurVideoD {
+      width: 85%;
+      aspect-ratio: $FormatH;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      video {
+        width: 70%;
+        aspect-ratio: $FormatH;
+      }
+
+      .InfoCarteV {
+        width: 25%;
+        aspect-ratio: $FormatV;
+        background-color: $CouleurAccent2;
+        border-radius: $BordureBento;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .TitreInfoCarteV {
+          width: 100%;
+          height: 15%;
+          background-color: rgba(255, 255, 255, 0.75);
+          color: $CouleurTexteS;
+          border-radius: 30px 30px 0 0;
+          place-content: center;
+          margin: 0;
+        }
+
+        .TxtInfoCarteV {
+          width: 100%;
+          aspect-ratio: 5/4;
+          background-color: aliceblue;
+          overflow-y: scroll;
+          padding: 5%;
+          color: $CouleurTexteS;
+          text-align: start;
+        }
+
+        .Pied2PageInfoCarteV {
+          width: 100%;
+          height: 35%;
+          background-color: rgba(199, 41, 41, 0.75);
+          border-radius: 0 0 $BordureBento $BordureBento;
+
+          .BlocLog {
+            width: 100%;
+            height: 80%;
+            overflow-y: scroll;
+
+            .logicielUtil {
+              padding: 0 $PaddindDefaut 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              h5 {
+                color: $CouleurTexteS;
+              }
+
+              .BulleLog {
+                width: 15%;
+                // aspect-ratio: $AspectRatioItem;
+                // background-color: $CouleurFondC;
+                // border-radius: $PetitBordureBento;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

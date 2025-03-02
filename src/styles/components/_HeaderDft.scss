@@ -1,0 +1,98 @@
+.HeaderDft {
+  /********** Header Par défaut **********/
+  width: $WBento;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: $BordureBento;
+  padding: $PaddingHF;
+  color: $CouleurTexteC;
+
+  .menu {
+    width: 60vw;
+    border-radius: $BordureBento;
+    display: inline-flex;
+    justify-content: space-around;
+    background-color: $CouleurGCO;
+    backdrop-filter: blur(25px);
+    align-items: center;
+    box-shadow: $OmbrePc;
+    height: fit-content;
+    padding: 1%;
+
+    li {
+      list-style: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      padding: 2.3% .5%;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+      color: $CouleurTexteC;
+      text-decoration: none;
+      font-weight: bold;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: $TransitionDefault;
+        border-radius: $PetitBordureBento;
+      }
+
+      &:hover {
+        &::before {
+          box-shadow: $OmbrePS;
+          background: linear-gradient(to bottom, $CouleurAccent2, $CouleurSecondaire);
+          transform: scale(1.25);
+        }
+      }
+
+    }
+  }
+
+  .Logo {
+    width: 20vw;
+    aspect-ratio: $AspectRatioItem;
+    display: flex;
+    z-index: 5;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Responsive Design
+  @media screen and (max-width: 768px) {
+    align-items: center;
+
+    .menu {
+      width: 50vw;
+      flex-direction: column;
+      align-items: center;
+      gap: 1%;
+    }
+
+    .Logo {
+      width: 50%;
+      aspect-ratio: $AspectRatioItem;
+      display: flex;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.ModeHeaderDft {
+  display: none;
+}

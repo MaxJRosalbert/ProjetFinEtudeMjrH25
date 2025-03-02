@@ -1,0 +1,38 @@
+.FooterStd {/********** Footer Standard **********/
+  height: 7.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $CouleurGS;
+  color: $CouleurTexteC;
+  font-size: 0.9rem;
+
+  .BtnNav{
+    width: 35vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+    li{
+      width: 35px;
+      aspect-ratio: 1;
+      box-shadow: $OmbrePS;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: $CouleurTexteS;
+        font-weight: bold;
+    }
+    } 
+  }
+  
+
+  display: none;
+}
+
+/********** Changement de class en Cas d'activation de Function **********/
+.ActiveFooterSdt{
+  display: flex;
+}
