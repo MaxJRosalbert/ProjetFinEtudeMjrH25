@@ -14,6 +14,7 @@ import JavaScript from "../assets/Icones/JavaScript.png";
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { Button } from '@mui/material';
 
 function DocuProg() {
 
@@ -47,12 +48,12 @@ function DocuProg() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}>
 
-        <h2>Logiciel pour la Prog</h2>
+        <h2>Logiciel pour la Programmation</h2>
 
         <label className="Burger" htmlFor="MenuDocu4">
-          <button onClick={toggleIcon4}>
-            {isToggled4 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          <Button onClick={toggleIcon4}>
+            {isToggled4 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning'/>}
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu4" />
         
@@ -74,9 +75,9 @@ function DocuProg() {
         <h2>Langage de Programmation</h2>
 
         <label className="Burger" htmlFor="MenuDocu5">
-          <button onClick={toggleIcon5}>
-            {isToggled5 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          <Button onClick={toggleIcon5}>
+            {isToggled5 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning'/>}
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu5" />
         

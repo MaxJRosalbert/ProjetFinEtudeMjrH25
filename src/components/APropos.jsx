@@ -17,6 +17,14 @@ function APropos() {
       </motion.section>
 
       <motion.section 
+        className="PhotoProfil"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75 }}>
+        <img src={ImgMax} alt="" />                  
+      </motion.section>
+      
+      <motion.section 
         className="AProposVrac"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,13 +48,6 @@ function APropos() {
         </ul>      
       </motion.section>
 
-      <motion.section 
-        className="PhotoProfil"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.75 }}>
-        <img src={ImgMax} alt="" />                  
-      </motion.section>
     </section>
 
     

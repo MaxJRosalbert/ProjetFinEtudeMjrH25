@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import '../styles/styles.scss';
-import Tp2 from '../assets/Doc/Tp2Creatif.pdf';
 import VideoV1 from '../assets/video/V1DuSite.mp4';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { Button } from '@mui/material';
 
 function Documentation() {
 
@@ -38,23 +38,6 @@ function Documentation() {
     setIsToggled5(!isToggled5);
   };
 
-  const Tp1Dwld = () => {
-    const link = document.createElement('a');
-    link.href = 'URL_DE_VOTRE_FICHIER_PDF.pdf'; // Remplacez cette URL par le chemin vers votre fichier PDF
-    link.download = 'nom_du_fichier.pdf'; // Le nom sous lequel le fichier sera téléchargé
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-  const Tp2Dwld = () => {
-    const link = document.createElement('a');
-    link.href = {TP2}; // Remplacez cette URL par le chemin vers votre fichier PDF
-    link.download = 'Tp2 Créatif.pdf'; // Le nom sous lequel le fichier sera téléchargé
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section className="Documentation">
 
@@ -76,9 +59,9 @@ function Documentation() {
         <h2>Présentation</h2>
 
         <label className="Burger" htmlFor="MenuDocu1">
-          <button onClick={toggleIcon1}>
+          <Button onClick={toggleIcon1}>
             {isToggled1 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu1" />
         <section className="ContenuDoc">
@@ -96,9 +79,9 @@ function Documentation() {
         <h2>Tp1</h2>
 
         <label className="Burger" htmlFor="MenuDocu2">
-          <button onClick={toggleIcon2}>
+          <Button onClick={toggleIcon2}>
             {isToggled2 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu2" />
 
@@ -118,7 +101,6 @@ function Documentation() {
           <p>Au cours de la dernière année et du cours de Méthodes de recherche et préparation au marché du travail (393-5E1), j’ai pu mettre en place un descriptif de mon projet, lister les VFX que je voudrais réaliser selon certains critères, faire la recherche documentaire et imaginer des visuels pour mon site et mes cartes.  Prenant appui sur ces ressources, je suis prêt à commencer mon projet de fin d’études. </p>
 
           <p>Le Plan de planification a été fait via Trello </p>
-          <p>Le contenu du Tp se trouve  <button onClick={Tp1Dwld}>Dans ce Document PDF</button> </p>
         </section>
 
       </motion.article>
@@ -131,9 +113,9 @@ function Documentation() {
         <h2>Tp2</h2>
 
         <label className="Burger" htmlFor="MenuDocu3">
-          <button onClick={toggleIcon3}>
+          <Button onClick={toggleIcon3}>
             {isToggled3 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu3" />
         
@@ -142,7 +124,6 @@ function Documentation() {
           <p>- Il faut concevoir l’UI/UX de l’application multimédia de présentation qui servira à illustrer l’ensemble de vos compétences TIM.</p>
           <p>- Il faut également produire un premier prototype (développement initial) de cette application afin d’en exposer les premiers balbutiements.</p>
           <p>- Le processus créatif doit être sur un élément pertinent et utile au projet (concept de jeu, site web, expérience interactive, etc.).</p>
-          <button onClick={Tp2Dwld}>Télécharger le PDF</button>
         </section>
 
       </motion.article>
@@ -155,9 +136,9 @@ function Documentation() {
         <h2>1ère Version</h2>
 
         <label className="Burger" htmlFor="MenuDocu4">
-          <button onClick={toggleIcon4}>
-            {isToggled4 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          <Button onClick={toggleIcon4}>
+            {isToggled4 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning' />}
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu4" />
         
@@ -175,15 +156,14 @@ function Documentation() {
         <h2>Version Finale</h2>
 
         <label className="Burger" htmlFor="MenuDocu5">
-          <button onClick={toggleIcon5}>
-            {isToggled5 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
-          </button>
+          <Button onClick={toggleIcon5}>
+            {isToggled5 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning' />}
+          </Button>
         </label>
         <input type="checkbox" id="MenuDocu5" />
         
         <section className="ContenuDoc">
-          <p>Retrouvez ici toutes les informations sur toutes les fonctionnalités possibles de l'application web</p>
-          <video src={VideoV1} controls autoPlay/>
+          <p>Le site et le projet étant finalement achever, vous pouvez contempler le résultat finale du site, ainsi que de pouvoir explorer et experimenter quelques-une de ses fonctionnalités!</p>
         </section>
       </motion.article>
 

@@ -34,7 +34,7 @@ function GalerieC() {
     const CartesVFX = [
       { 
         titre: "Pluie de de météor", 
-        info: "Info de la video 1",
+        info: "Pour rajouter un peu de spectaculaire, j'ai tenté de reproduire une pluie de méteor. Cela m'a permi d'experimenter les particules de feu avec un objet physique. Le résultat était satisfaisant et j'ai pu l'embellir rendu au montage et avec quelques idée de comment ça en valeur grâce à mes séquences sous fond vert.",
         image: PluieMeteorImg,
         video: PluieMeteorVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -48,7 +48,7 @@ function GalerieC() {
       },
       { 
         titre: "Homme Sable", 
-        info: "Info de la video 2",
+        info: "Étant fan de Spiderman et en voulant expérimenter l'intégration humaine dans les VFX, jai tenté de reproduire l'homme sable de Marvel. En experimentant les particules d'objet pour en faire du sable et du capture de mouvement 3D avec mixamo, j'ai pu reproduire cette scène. Ce VFX fut d'ailleur particulièrement (avec le tesseract) long pour le temps de rendu final.",
         image: HommeSableImg,
         video: HommeSableVideo,
         nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -63,7 +63,7 @@ function GalerieC() {
       },
       { 
         titre: "Cube de fumé", 
-        info: "Info de la video 3",
+        info: "Après un Tesseract mitigé, j'ai tout de même eu l'idée de retirer les particules générées (qui faisaient défaut au résultat final) et de concerver le reste (notamment le rendu fumée) pour pouvoir créer une boule de fumée. Cette idée m'est venu en essayant de rattraper mon tesseract et en trouvant que la boule de fumée ressemblait un peu au rasengan de Naruto. Je l'ai donc récupérer et avec mes séquences tournées sous fond vert avec des accesoirs de tracking, cela a engendrer ce projet.",
         image: CubeFumeeImg,
         video: CubeFumeeVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -77,7 +77,7 @@ function GalerieC() {
       },
       { 
         titre: "Tentative de tesseract", 
-        info: "Info de la video 4",
+        info: "Comme 1er vfx et façon de me familiariser davantage avec le logiciel houdini, j'ai tenté de reproduire le tesseract de Loki dans Avengers. Dans l'ensemble, cela c'est bien passé (j'ai pu experimenter les particules de forme et de vent), mais suite à des complication arrivée aux préparation pour le rendu, le résultat n'est pas celui désiré (notamment que le rendu empêche de voir le niveau de particules conçu et généré.)",
         image: TesseractImg,
         video: TesseractVideo,
         nomLog: ["Houdini", "After Effects"],
@@ -110,7 +110,7 @@ function GalerieC() {
             transition={{ duration: 0.25 }}>
       
             <h1>Galerie de cartes</h1>
-            <p>Cette Section présente la galerie des séquences VFX réalisées ainsi que des informations sommaires sur chacune d'entre elles, les techniques de tournage nécéssaires à la création et les logiciels utilisés à la réalisation.</p>
+            <p>Cette Section présente la galerie des séquences VFX réalisées ainsi que des informations sommaires sur chacune d'entre elles, les techniques de tournage nécéssaires à la création et les logiciels utilisés à la réalisation. Dans la globalité, ce sont des VFX avec des incrustations de moi sur fond vert et du tracking via des accessoires et des techniques plus avancées d'after effects.</p>
           </motion.section>
 
           <motion.section className="GrilleCartes" 
