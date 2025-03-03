@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
+// Icons de Logiciels
 import AfterEffects from "../assets/Icones/AfterEffects.png";
 import FondVert from "../assets/Icones/FondVert.png";
 import Houdini3D from "../assets/Icones/Houdini3D.png";
@@ -11,14 +12,16 @@ import Photoshop from "../assets/Icones/Photoshop.png";
 import PremierePro from "../assets/Icones/PremierePro.png";
 import VideoCamera from "../assets/Icones/VideoCamera.png";
 
-// Images & Videos used in CartesVFX (this is the crucial fix):
+// Images de cartes VFX
 import PluieMeteorImg from "../assets/img/PluieMeteor.png";
-import PluieMeteorVideo from "../assets/video/PluieDeMeteor.mp4";
 import HommeSableImg from "../assets/img/HommeSable.png";
-import HommeSableVideo from "../assets/video/HommeSable.mp4";
 import CubeFumeeImg from "../assets/img/CubeFumée.png";
-import CubeFumeeVideo from "../assets/video/MoveFumée.mp4";
 import TesseractImg from "../assets/img/ImgTentTésseract0.jpg";
+
+// Vidéos de séquences VFX
+import PluieMeteorVideo from "../assets/video/PluieDeMeteor.mp4";
+import HommeSableVideo from "../assets/video/HommeSable.mp4";
+import CubeFumeeVideo from "../assets/video/MoveFumée.mp4";
 import TesseractVideo from "../assets/video/Tentative Tesseract.mp4";
 
 import '../styles/styles.scss';
