@@ -388,6 +388,7 @@
   color: #242424;
   font-size: 2rem;
   margin-bottom: 1rem;
+  width: 30%;
 }
 .Accueil .AccinfoVrac section div p {
   font-size: 1.1rem;
@@ -490,8 +491,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 35px;
+  border: outset #42d8ff 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.25) 0px 5px 5px, rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.25) 0px 5px 5px;
   margin: 2rem auto;
-  box-shadow: rgba(245, 245, 245, 0.0823529412) 0px 10px 20px, rgba(245, 245, 245, 0.1450980392) 0px 6px 6px;
 }
 .galerie .GrilleCartes .Carte .ContenueCarte {
   display: flex;
@@ -505,7 +507,7 @@
   height: 15%;
   background-color: rgba(255, 255, 255, 0.75);
   color: #242424;
-  border-radius: 35px 35px 0 0;
+  border-radius: 30px 30px 0 0;
   place-content: center;
   font-size: 0.75rem;
   margin: 0;
@@ -514,11 +516,10 @@
   width: 85%;
   aspect-ratio: 0.5625;
   border-radius: 0 0 35px 35px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.25) 0px 5px 5px;
   background-color: #f9f9f9;
-}
-.galerie .GrilleCartes .Carte .ContenueCarte .Decor img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .galerie .GrilleCartes .Carte .ContenueCarte .Pied2Carte {
   width: 80%;
@@ -533,6 +534,8 @@
 }
 .galerie .GrilleCartes .Carte:hover {
   box-shadow: none;
+  border: outset #ff9e42 5px;
+  background-color: #42d8ff;
   cursor: pointer;
 }
 .galerie .GrilleCartes .Carte:hover .Decor {
@@ -544,9 +547,6 @@
 }
 .galerie .GrilleCartes .Carte:hover .Pied2Carte .BulleLog {
   width: 17.5%;
-  aspect-ratio: 1;
-  background-color: #f5f5f5;
-  border-radius: 10px;
 }
 @media screen and (max-width: 767px) {
   .galerie {
@@ -566,7 +566,7 @@
     height: 15%;
     background-color: rgba(255, 255, 255, 0.75);
     color: #242424;
-    border-radius: 35px 35px 0 0;
+    border-radius: 30px 30px 0 0;
     place-content: center;
     margin: 0;
   }
@@ -595,18 +595,16 @@
     overflow-y: scroll;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil {
+    padding: 0 2rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil h5 {
     color: #242424;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil .BulleLog {
     width: 15%;
-    aspect-ratio: 1;
-    background-color: #f5f5f5;
-    border-radius: 10px;
   }
   .galerie .LecteurVideoD {
     display: none;
@@ -642,7 +640,7 @@
     height: 15%;
     background-color: rgba(255, 255, 255, 0.75);
     color: #242424;
-    border-radius: 35px 35px 0 0;
+    border-radius: 30px 30px 0 0;
     place-content: center;
     margin: 0;
   }
@@ -667,18 +665,16 @@
     overflow-y: scroll;
   }
   .galerie .LecteurVideoD .InfoCarteV .Pied2PageInfoCarteV .BlocLog .logicielUtil {
+    padding: 0 2rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .galerie .LecteurVideoD .InfoCarteV .Pied2PageInfoCarteV .BlocLog .logicielUtil h5 {
     color: #242424;
   }
   .galerie .LecteurVideoD .InfoCarteV .Pied2PageInfoCarteV .BlocLog .logicielUtil .BulleLog {
     width: 15%;
-    aspect-ratio: 1;
-    background-color: #f5f5f5;
-    border-radius: 10px;
   }
 }
 
@@ -750,18 +746,27 @@
 }
 .Documentation article input[type=checkbox]:checked ~ .ContenuDoc {
   max-height: 45vh;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Documentation article .ContenuDoc {
   height: 100%;
   display: none;
+  padding: 2rem;
   grid-area: 2/1/3/3;
   overflow-y: scroll;
+}
+.Documentation article .ContenuDoc h3 {
+  color: #ff9e42;
 }
 .Documentation article .ContenuDoc p {
   font-size: 1.3rem;
   font-weight: bold;
   color: #242424;
+}
+.Documentation article .ContenuDoc video {
+  width: 75%;
 }
 @media screen and (max-width: 768px) {
   .Documentation {
