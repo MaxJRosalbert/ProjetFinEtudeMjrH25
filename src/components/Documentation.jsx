@@ -48,7 +48,7 @@ function Documentation() {
   };
   const Tp2Dwld = () => {
     const link = document.createElement('a');
-    link.href = "Tp2Creatif.pdf"; // Remplacez cette URL par le chemin vers votre fichier PDF
+    link.href = {TP2}; // Remplacez cette URL par le chemin vers votre fichier PDF
     link.download = 'Tp2 Créatif.pdf'; // Le nom sous lequel le fichier sera téléchargé
     document.body.appendChild(link);
     link.click();

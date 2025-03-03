@@ -11,6 +11,16 @@ import Photoshop from "../assets/Icones/Photoshop.png";
 import PremierePro from "../assets/Icones/PremierePro.png";
 import VideoCamera from "../assets/Icones/VideoCamera.png";
 
+// Images & Videos used in CartesVFX (this is the crucial fix):
+import PluieMeteorImg from "../assets/img/PluieMeteor.png";
+import PluieMeteorVideo from "../assets/video/PluieDeMeteor.mp4";
+import HommeSableImg from "../assets/img/HommeSable.png";
+import HommeSableVideo from "../assets/video/HommeSable.mp4";
+import CubeFumeeImg from "../assets/img/CubeFumée.png";
+import CubeFumeeVideo from "../assets/video/MoveFumée.mp4";
+import TesseractImg from "../assets/img/ImgTentTésseract0.jpg";
+import TesseractVideo from "../assets/video/Tentative Tesseract.mp4";
+
 import '../styles/styles.scss';
 
 function GalerieC() {
@@ -22,8 +32,8 @@ function GalerieC() {
       { 
         titre: "Pluie de de météor", 
         info: "Info de la video 1",
-        image: "../assets/img/PluieMeteor.png", 
-        video: "../assets/video/PluieDeMeteor.mp4", 
+        image: PluieMeteorImg,
+        video: PluieMeteorVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
         icones: [ 
           Houdini3D, 
@@ -36,8 +46,8 @@ function GalerieC() {
       { 
         titre: "Homme Sable", 
         info: "Info de la video 2",
-        image: "../assets/img/HommeSable.png", 
-        video: "../assets/video/HommeSable.mp4",
+        image: HommeSableImg,
+        video: HommeSableVideo,
         nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
         icones: [ 
           Houdini3D,
@@ -51,8 +61,8 @@ function GalerieC() {
       { 
         titre: "Cube de fumé", 
         info: "Info de la video 3",
-        image: "../assets/img/CubeFumée.png", 
-        video: "../assets/video/Move+Fumée.mp4",
+        image: CubeFumeeImg,
+        video: CubeFumeeVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
         icones: [ 
           Houdini3D, 
@@ -65,8 +75,8 @@ function GalerieC() {
       { 
         titre: "Tentative de tesseract", 
         info: "Info de la video 4",
-        image: "../assets/img/ImgTentTésseract0.jpg", 
-        video: "../assets/video/Tentative Tesseract.mp4",
+        image: TesseractImg,
+        video: TesseractVideo,
         nomLog: ["Houdini", "After Effects"],
         icones: [ 
           Houdini3D, 
