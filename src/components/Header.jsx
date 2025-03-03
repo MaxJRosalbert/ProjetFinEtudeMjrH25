@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import "../styles/HeaderStd.scss";
+import Logo from "../assets/img/Logo MJR nb.png";
 import '../styles/styles.scss';
 
 function Header() {
   return (
     <header className="HeaderStd">
       <div className="logo">
-        <Link to="/Accueil"><img src="/assets/images/logo.png" alt="Logo"/></Link>
+        <Link to="/Accueil"><img src={Logo} alt="Logo"/></Link>
       </div>
       <ul className="menu">
         <li><Link to="/Accueil">Accueil</Link></li>
