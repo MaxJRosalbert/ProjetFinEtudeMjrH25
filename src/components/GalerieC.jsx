@@ -19,61 +19,61 @@ function GalerieC() {
     const videoRef = useRef(null);
 
     const CartesVFX = [
-        { 
-          titre: "Pluie de de météor", 
-          info: "Info de la video 1",
-          image: "../assets/img/PluieMeteor.png", 
-          video: "../assets/video/PluieDeMeteor.mp4", 
-          nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
-          icones: [ 
-            Houdini3D, 
-            AfterEffects,
-            PremierePro,
-            FondVert, 
-            VideoCamera
-          ] 
-        },
-        { 
-          titre: "Homme Sable", 
-          info: "Info de la video 2",
-          image: "../assets/img/HommeSable.png", 
-          video: "../assets/video/HommeSable.mp4",
-          nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
-          icones: [ 
-            Houdini3D,
-            Mixamo, 
-            FondVert, 
-            AfterEffects,
-            PremierePro,
-            VideoCamera
-          ] 
-        },
-        { 
-          titre: "Cube de fumé", 
-          info: "Info de la video 3",
-          image: "../assets/img/CubeFumée.png", 
-          video: "../assets/video/Move+Fumée.mp4",
-          nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
-          icones: [ 
-            Houdini3D, 
-            AfterEffects,
-            PremierePro,
-            FondVert, 
-            VideoCamera
-          ] 
-        },
-        { 
-          titre: "Tentative de tesseract", 
-          info: "Info de la video 4",
-          image: "../assets/img/ImgTentTésseract0.jpg", 
-          video: "../assets/video/Tentative Tesseract.mp4",
-          nomLog: ["Houdini", "After Effects"],
-          icones: [ 
-            Houdini3D, 
-            AfterEffects
-          ] 
-        }
-    ];
+      { 
+        titre: "Pluie de de météor", 
+        info: "Info de la video 1",
+        image: "../assets/img/PluieMeteor.png", 
+        video: "../assets/video/PluieDeMeteor.mp4", 
+        nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
+        icones: [ 
+          Houdini3D, 
+          AfterEffects,
+          PremierePro,
+          FondVert, 
+          VideoCamera
+        ] 
+      },
+      { 
+        titre: "Homme Sable", 
+        info: "Info de la video 2",
+        image: "../assets/img/HommeSable.png", 
+        video: "../assets/video/HommeSable.mp4",
+        nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
+        icones: [ 
+          Houdini3D,
+          Mixamo, 
+          FondVert, 
+          AfterEffects,
+          PremierePro,
+          VideoCamera
+        ] 
+      },
+      { 
+        titre: "Cube de fumé", 
+        info: "Info de la video 3",
+        image: "../assets/img/CubeFumée.png", 
+        video: "../assets/video/Move+Fumée.mp4",
+        nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
+        icones: [ 
+          Houdini3D, 
+          AfterEffects,
+          PremierePro,
+          FondVert, 
+          VideoCamera
+        ] 
+      },
+      { 
+        titre: "Tentative de tesseract", 
+        info: "Info de la video 4",
+        image: "../assets/img/ImgTentTésseract0.jpg", 
+        video: "../assets/video/Tentative Tesseract.mp4",
+        nomLog: ["Houdini", "After Effects"],
+        icones: [ 
+          Houdini3D, 
+          AfterEffects
+        ] 
+      }
+  ];
 
     const handleCardClick = (index) => {
       if (activeCard === index) {
@@ -112,7 +112,7 @@ function GalerieC() {
                     <img className="Decor" src={carte.image} alt={carte.titre} />
                     <div className="Pied2Carte">
                       {carte.icones.map((icone, i) => (
-                        <img src={icone} className={`BulleLog ${icone}`} alt={`Icône ${i}`} />
+                        <img src={icone} className={`BulleLog ${icone}`} alt={`Icône ${i}`} key={i}/>
                       ))}
                     </div>
                   </section>
@@ -130,7 +130,7 @@ function GalerieC() {
                       <section className="BlocLog">
                       {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
                         <section key={i} className="logicielUtil">
-                          <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} />
+                          <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} key={i} />
                           <h5>{log}</h5>
                         </section>
                       ))}
@@ -158,7 +158,7 @@ function GalerieC() {
                   <section className="BlocLog">
                   {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
                     <section key={i} className="logicielUtil">
-                      <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} />
+                      <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} key={i} />
                       <h5>{log}</h5>
                     </section>
                   ))}

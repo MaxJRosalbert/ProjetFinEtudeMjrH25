@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import HeaderDft from "./components/HeaderDft";
-import FooterStd from "./components/Footer";
-import FooterDft from "./components/footerDft";
-import GalerieC from "./components/GalerieC";
-import Accueil from "./components/Accueil";
-import DocuProg from "./components/DocuProg";
-import APropos from "./components/APropos";
-import Documentation from "./components/Documentation";
+import Header from "./components/Header.jsx";
+import HeaderDft from "./components/HeaderDft.jsx";
+import FooterStd from "./components/Footer.jsx";
+import FooterDft from "./components/footerDft.jsx";
+import GalerieC from "./components/GalerieC.jsx";
+import Accueil from "./components/Accueil.jsx";
+import DocuProg from "./components/DocuProg.jsx";
+import APropos from "./components/APropos.jsx";
+import Documentation from "./components/Documentation.jsx";
 // import './App.scss';
 import './styles/styles.scss';
 
