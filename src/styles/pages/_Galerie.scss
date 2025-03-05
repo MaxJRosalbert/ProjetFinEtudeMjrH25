@@ -166,7 +166,10 @@
 
             h5 {
               color: $CouleurTexteS;
-              font-size: 2rem;
+              font-size: 1.25rem;
+            }
+            .BulleLog{
+              height: 50%;
             }
 
           }
@@ -245,7 +248,10 @@
 
               h5 {
                 color: $CouleurTexteS;
-                font-size: 2rem;
+                font-size: 1.25rem;
+              }
+              .BulleLog{
+                width: 2.5vw;;
               }
             }
           }

@@ -411,7 +411,7 @@
     border-radius: 35px 35px 0 0;
   }
   .Accueil .AccCreaLog .Crea div {
-    margin-left: 15%;
+    margin-left: 25%;
     height: 6vh;
     aspect-ratio: 1;
   }
@@ -423,19 +423,19 @@
     border-radius: 0 0 35px 35px;
   }
   .Accueil .AccCreaLog .Log div {
-    margin-right: 15%;
+    margin-right: 25%;
     height: 6vh;
     aspect-ratio: 1;
   }
   .Accueil .AccinfoVrac {
     padding: 0.5rem;
-    margin: 0;
   }
   .Accueil .AccinfoVrac section {
     flex-direction: column;
+    align-items: center;
   }
   .Accueil .AccinfoVrac section div {
-    margin: 0;
+    width: 90%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -505,6 +505,7 @@
 .galerie .GrilleCartes .Carte .ContenueCarte .TitreCarte {
   width: 100%;
   height: 15%;
+  font-family: "Masque", sans-serif;
   background-color: rgba(255, 255, 255, 0.75);
   color: #242424;
   border-radius: 30px 30px 0 0;
@@ -546,7 +547,7 @@
   display: flex;
 }
 .galerie .GrilleCartes .Carte:hover .Pied2Carte .BulleLog {
-  width: 17.5%;
+  width: 22.5%;
 }
 @media screen and (max-width: 767px) {
   .galerie {
@@ -581,6 +582,7 @@
     overflow-y: scroll;
     padding: 5%;
     color: #242424;
+    font-size: larger;
     text-align: start;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV {
@@ -596,15 +598,17 @@
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil {
     padding: 0 2rem 0;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil h5 {
     color: #242424;
+    font-size: 1.25rem;
   }
   .galerie .LecteurVideoMobile .Pied2PageInfoCarteV .BlocLog .logicielUtil .BulleLog {
-    width: 15%;
+    height: 50%;
   }
   .galerie .LecteurVideoD {
     display: none;
@@ -672,9 +676,10 @@
   }
   .galerie .LecteurVideoD .InfoCarteV .Pied2PageInfoCarteV .BlocLog .logicielUtil h5 {
     color: #242424;
+    font-size: 1.25rem;
   }
   .galerie .LecteurVideoD .InfoCarteV .Pied2PageInfoCarteV .BlocLog .logicielUtil .BulleLog {
-    width: 15%;
+    width: 2.5vw;
   }
 }
 
@@ -731,8 +736,10 @@
 }
 .Documentation article .Burger .FlecheH {
   background-color: #42d8ff;
+  border-radius: 10px;
 }
 .Documentation article .Burger .FlecheB {
+  border-radius: 10px;
   background-color: #ff9e42;
 }
 .Documentation article input[type=checkbox] {
@@ -777,6 +784,9 @@
   }
   .Documentation article h2 {
     font-size: larger;
+  }
+  .Documentation video {
+    width: 100%;
   }
 }
 
@@ -836,9 +846,11 @@
   height: 100%;
 }
 .DocuProg article .Burger .FlecheH {
+  border-radius: 10px;
   background-color: #42d8ff;
 }
 .DocuProg article .Burger .FlecheB {
+  border-radius: 10px;
   background-color: #ff9e42;
 }
 .DocuProg article input[type=checkbox] {
@@ -950,7 +962,7 @@
     margin-bottom: 20vh;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .APropos {
     display: grid;
     grid-template-columns: 3fr 2fr;

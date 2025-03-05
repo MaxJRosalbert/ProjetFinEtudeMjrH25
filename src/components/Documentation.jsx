@@ -60,7 +60,7 @@ function Documentation() {
 
         <label className="Burger" htmlFor="MenuDocu1">
           <Button onClick={toggleIcon1}>
-            {isToggled1 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
+            {isToggled1 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning' />}
           </Button>
         </label>
         <input type="checkbox" id="MenuDocu1" />
@@ -80,7 +80,7 @@ function Documentation() {
 
         <label className="Burger" htmlFor="MenuDocu2">
           <Button onClick={toggleIcon2}>
-            {isToggled2 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
+            {isToggled2 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning' />}
           </Button>
         </label>
         <input type="checkbox" id="MenuDocu2" />
@@ -114,7 +114,7 @@ function Documentation() {
 
         <label className="Burger" htmlFor="MenuDocu3">
           <Button onClick={toggleIcon3}>
-            {isToggled3 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' />}
+            {isToggled3 ? <ExpandLessIcon fontSize='large' className='FlecheB' /> : <ExpandMoreIcon fontSize='large' className='FlecheH' color='warning' />}
           </Button>
         </label>
         <input type="checkbox" id="MenuDocu3" />
