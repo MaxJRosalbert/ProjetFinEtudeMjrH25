@@ -139,7 +139,7 @@
         width: 100%;
         aspect-ratio: 5/4;
         background-color: aliceblue;
-        overflow-y: scroll;
+        overflow-y: auto;
         padding: 5%;
         color: $CouleurTexteS;
         font-size: larger;
@@ -155,7 +155,7 @@
         .BlocLog {
           width: 100%;
           height: 80%;
-          overflow-y: scroll;
+          overflow-y: auto;
 
           .logicielUtil {
             padding: 0 $PaddindDefaut 0;
@@ -222,10 +222,12 @@
         .TxtInfoCarteV {
           width: 100%;
           aspect-ratio: 5/4;
-          background-color: aliceblue;
-          overflow-y: scroll;
+          // background-color: aliceblue;
+          overflow-y: auto;
           padding: 5%;
           color: $CouleurTexteS;
+          font-size: larger;
+          font-weight: bold;
           text-align: start;
         }
 
@@ -238,7 +240,7 @@
           .BlocLog {
             width: 100%;
             height: 80%;
-            overflow-y: scroll;
+            overflow-y: auto;
 
             .logicielUtil {
               padding: 0 $PaddindDefaut 0;

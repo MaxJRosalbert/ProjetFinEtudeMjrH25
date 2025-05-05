@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import '../styles/styles.scss';
 import VideoV1 from '../assets/video/V1DuSite.mp4';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { Button } from '@mui/material';
+import Xd from '../assets/Icones/Xd.png';
+import VsCode from '../assets/Icones/VsCode.png';
+import GitHub from '../assets/Icones/GitHub.png';
+import Html from '../assets/Icones/Html.png';
+import Sass from '../assets/Icones/Sass.png';
+import JavaScript from '../assets/Icones/JavaScript.png';
+import CReact from '../assets/Icones/xd.png';
+import Vitejs from '../assets/Icones/Vitejs.png';
 
 function Documentation() {
 
@@ -37,6 +44,17 @@ function Documentation() {
   const toggleIcon5 = () => {
     setIsToggled5(!isToggled5);
   };
+  const [isToggled6, setIsToggled6] = useState(false);
+
+  const toggleIcon6 = () => {
+    setIsToggled6(!isToggled6);
+  };
+  const [isToggled7, setIsToggled7] = useState(false);
+
+  const toggleIcon7 = () => {
+    setIsToggled7(!isToggled7);
+  };
+
 
   return (
     <section className="Documentation">
@@ -142,7 +160,7 @@ function Documentation() {
         </label>
         <input type="checkbox" id="MenuDocu4" />
         
-        <section className="ContenuDoc">:
+        <section className="ContenuDoc">
           <p>Retrouvez ici une vers béta (Wireframe) de l'application web </p>
           <video src={VideoV1} controls autoPlay/>
         </section>
@@ -163,7 +181,7 @@ function Documentation() {
         <input type="checkbox" id="MenuDocu5" />
         
         <section className="ContenuDoc">
-          <p>Le site et le projet étant finalement achever, vous pouvez contempler le résultat finale du site, ainsi que de pouvoir explorer et experimenter quelques-une de ses fonctionnalités!</p>
+          <p>Le site et le projet étant finalement achevés, vous pouvez contempler le résultat final du site, ainsi qu'explorer et expérimenter quelques-unes de ses fonctionnalités !</p>
         </section>
       </motion.article>
 

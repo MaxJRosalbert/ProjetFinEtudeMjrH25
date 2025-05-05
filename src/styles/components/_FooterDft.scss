@@ -1,7 +1,7 @@
 .footerDft {
   /********** Footer Par défaut **********/
   width: $WBento;
-  min-height: 10vh;
+  min-height: 15vh;
   color: $CouleurTexteC;
   font-size: $FontSize;
   background-color: $CouleurGCO;
@@ -12,6 +12,7 @@
   justify-content: space-around;
   border-radius: $BordureBento;
   padding: $PaddingHF;
+  margin-bottom: 5%;
 
   .BtnNav {
     gap: $GapNavItems;

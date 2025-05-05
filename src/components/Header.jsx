@@ -1,22 +1,89 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import "../styles/HeaderStd.scss";
+import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import '../styles/styles.scss';
 
 import Logo from "../assets/img/Logo MJR Clr.png";
 
 function Header() {
+    const [theme, setTheme] = useState('sombre');
+    const [toggleHeaderStd, setToggleHeaderStd] = useState(() => {
+      return localStorage.getItem('toggleHeaderStd') === 'true';
+    });
+  
+    useEffect(() => {
+      document.body.classList.remove('theme-clair', 'theme-sombre');
+      document.body.classList.add(theme === 'clair' ? 'theme-clair' : 'theme-sombre');
+    }, [theme]);
+  
+    const toggleTheme = () => {
+      setTheme(theme === 'clair' ? 'sombre' : 'clair');
+    };
+
+    useEffect(() => {
+      const applyToggle = (state) => {
+        const headerStd = document.querySelector('.HeaderStd');
+        const headerDft = document.querySelector('.HeaderDft');
+        const footerDft = document.querySelector('.footerDft');
+        const footerStd = document.querySelector('.FooterStd');
+        if (headerStd) headerStd.classList.toggle('ActiveHeaderStd', state);
+        if (headerDft) headerDft.classList.toggle('ModeHeaderDft', state);
+        if (footerDft) footerDft.classList.toggle('DesActiveFooterDefaut', state);
+        if (footerStd) footerStd.classList.toggle('ActiveFooterSdt', state);
+      };
+      applyToggle(toggleHeaderStd);
+      const onStorage = (e) => {
+        if (e.key === 'toggleHeaderStd') {
+          const newState = e.newValue === 'true';
+          setToggleHeaderStd(newState);
+          applyToggle(newState);
+        }
+      };
+      window.addEventListener('storage', onStorage);
+      return () => window.removeEventListener('storage', onStorage);
+      // eslint-disable-next-line
+    }, []);
+
+    useEffect(() => {
+      const applyToggle = (state) => {
+        const headerStd = document.querySelector('.HeaderStd');
+        const headerDft = document.querySelector('.HeaderDft');
+        const footerDft = document.querySelector('.footerDft');
+        const footerStd = document.querySelector('.FooterStd');
+        if (headerStd) headerStd.classList.toggle('ActiveHeaderStd', state);
+        if (headerDft) headerDft.classList.toggle('ModeHeaderDft', state);
+        if (footerDft) footerDft.classList.toggle('DesActiveFooterDefaut', state);
+        if (footerStd) footerStd.classList.toggle('ActiveFooterSdt', state);
+      };
+      applyToggle(toggleHeaderStd);
+    }, [toggleHeaderStd]);
+
+    const handleToggleHeaderStd = () => {
+      const newState = !toggleHeaderStd;
+      setToggleHeaderStd(newState);
+      localStorage.setItem('toggleHeaderStd', newState);
+      // Suppression du StorageEvent manuel, la synchro se fait via l'événement 'storage'
+    };
+
   return (
     <header className="HeaderStd">
       <div className="logo">
-        <Link to="/Accueil"><img src={Logo} alt="Logo"/></Link>
+        <Link to="/Accueil"><img src={Logo} alt="Logo du site MJR" /></Link>
       </div>
       <ul className="menu">
-        <li><Link to="/Accueil">Accueil</Link></li>
-        <li><Link to="/GalerieC">Galerie</Link></li>
-        <li><Link to="/DocuProg">Aspect Prog</Link></li>
-        <li><Link to="/Documentation">Documentation</Link></li>
-        <li><Link to="/APropos">À Propos</Link></li>
+        <li><Link to="/Accueil" aria-label="Accueil">Accueil</Link></li>
+        <li><Link to="/GalerieC" aria-label="Galerie">Galerie</Link></li>
+        <li><Link to="/DocuProg" aria-label="Aspect programmation">Aspect Prog</Link></li>
+        <li><Link to="/Documentation" aria-label="Documentation">Documentation</Link></li>
+        <li><Link to="/APropos" aria-label="À propos">À Propos</Link></li>
+        <li onClick={toggleTheme} className="theme-toggle" aria-label="Changer le thème" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') toggleTheme(); }}>
+          {theme === 'clair' ? <Brightness3Icon fontSize="large" color="primary" /> : <BrightnessHighIcon fontSize="large" color="action"/>}
+        </li>
+        <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
+          {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" color="action"/>}
+        </li>
       </ul>
     </header>
   );

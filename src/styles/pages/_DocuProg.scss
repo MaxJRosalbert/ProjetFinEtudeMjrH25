@@ -100,9 +100,14 @@
       }
       ul{
         display: flex;
+        align-items: center;
         justify-content: space-evenly;
-        img{
-          width: 15%;
+        list-style: none;
+        margin: 0;
+        li{
+          img{
+            width: 150px;
+          }
         }
       }
     }

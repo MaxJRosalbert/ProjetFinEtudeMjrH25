@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { QRCodeCanvas } from 'qrcode.react';
 
 // Icons de Logiciels
 import AfterEffects from "../assets/Icones/AfterEffects.png";
@@ -30,11 +31,13 @@ function GalerieC() {
     const [activeCard, setActiveCard] = useState(null);
     const [activeCardInfo, setActiveCardInfo] = useState({});
     const videoRef = useRef(null);
+    const [search, setSearch] = useState("");
+    const [filter, setFilter] = useState("");
 
     const CartesVFX = [
       { 
-        titre: "Pluie de de météor", 
-        info: "Pour rajouter un peu de spectaculaire, j'ai tenté de reproduire une pluie de méteor. Cela m'a permi d'experimenter les particules de feu avec un objet physique. Le résultat était satisfaisant et j'ai pu l'embellir rendu au montage et avec quelques idée de comment ça en valeur grâce à mes séquences sous fond vert.",
+        titre: "Pluie de météores", 
+        info: "Pour ajouter un peu de spectaculaire, j'ai tenté de reproduire une pluie de météores. Cela m'a permis d'expérimenter les particules de feu avec un objet physique. Le résultat était satisfaisant et j'ai pu l'embellir au montage et avec quelques idées pour la mise en valeur grâce à mes séquences sur fond vert.",
         image: PluieMeteorImg,
         video: PluieMeteorVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -48,7 +51,7 @@ function GalerieC() {
       },
       { 
         titre: "Homme Sable", 
-        info: "Étant fan de Spiderman et en voulant expérimenter l'intégration humaine dans les VFX, jai tenté de reproduire l'homme sable de Marvel. En experimentant les particules d'objet pour en faire du sable et du capture de mouvement 3D avec mixamo, j'ai pu reproduire cette scène. Ce VFX fut d'ailleur particulièrement (avec le tesseract) long pour le temps de rendu final.",
+        info: "Étant fan de Spiderman et voulant expérimenter l'intégration humaine dans les VFX, j'ai tenté de reproduire l'homme sable de Marvel. En expérimentant les particules d'objet pour en faire du sable et la capture de mouvement 3D avec Mixamo, j'ai pu reproduire cette scène. Ce VFX fut d'ailleurs particulièrement long (avec le tesseract) pour le temps de rendu final.",
         image: HommeSableImg,
         video: HommeSableVideo,
         nomLog: ["Houdini", "Mixamo", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -62,8 +65,8 @@ function GalerieC() {
         ] 
       },
       { 
-        titre: "Cube de fumé", 
-        info: "Après un Tesseract mitigé, j'ai tout de même eu l'idée de retirer les particules générées (qui faisaient défaut au résultat final) et de concerver le reste (notamment le rendu fumée) pour pouvoir créer une boule de fumée. Cette idée m'est venu en essayant de rattraper mon tesseract et en trouvant que la boule de fumée ressemblait un peu au rasengan de Naruto. Je l'ai donc récupérer et avec mes séquences tournées sous fond vert avec des accesoirs de tracking, cela a engendrer ce projet.",
+        titre: "Cube de fumée", 
+        info: "Après un tesseract mitigé, j'ai tout de même eu l'idée de retirer les particules générées (qui faisaient défaut au résultat final) et de conserver le reste (notamment le rendu fumée) pour pouvoir créer une boule de fumée. Cette idée m'est venue en essayant de rattraper mon tesseract et en trouvant que la boule de fumée ressemblait un peu au rasengan de Naruto. Je l'ai donc récupérée et avec mes séquences tournées sur fond vert avec des accessoires de tracking, cela a engendré ce projet.",
         image: CubeFumeeImg,
         video: CubeFumeeVideo,
         nomLog: ["Houdini", "After Effects", "Premiere pro", "Technique Fond vert", "Tournage camera"],
@@ -77,7 +80,7 @@ function GalerieC() {
       },
       { 
         titre: "Tentative de tesseract", 
-        info: "Comme 1er vfx et façon de me familiariser davantage avec le logiciel houdini, j'ai tenté de reproduire le tesseract de Loki dans Avengers. Dans l'ensemble, cela c'est bien passé (j'ai pu experimenter les particules de forme et de vent), mais suite à des complication arrivée aux préparation pour le rendu, le résultat n'est pas celui désiré (notamment que le rendu empêche de voir le niveau de particules conçu et généré.)",
+        info: "Comme 1er VFX et pour me familiariser davantage avec le logiciel Houdini, j'ai tenté de reproduire le tesseract de Loki dans Avengers. Dans l'ensemble, cela s'est bien passé (j'ai pu expérimenter les particules de forme et de vent), mais suite à des complications arrivées lors de la préparation pour le rendu, le résultat n'est pas celui désiré (notamment que le rendu empêche de voir le niveau de particules conçu et généré).",
         image: TesseractImg,
         video: TesseractVideo,
         nomLog: ["Houdini", "After Effects"],
@@ -87,6 +90,16 @@ function GalerieC() {
         ] 
       }
   ];
+
+    // Liste des logiciels pour le filtrage
+    const allSoftwares = Array.from(new Set(CartesVFX.flatMap(c => c.nomLog)));
+
+    // Filtrage dynamique
+    const filteredCartes = CartesVFX.filter(carte => {
+      const matchTitre = carte.titre.toLowerCase().includes(search.toLowerCase());
+      const matchLog = filter ? carte.nomLog.includes(filter) : true;
+      return matchTitre && matchLog;
+    });
 
     const handleCardClick = (index) => {
       if (activeCard === index) {
@@ -111,48 +124,70 @@ function GalerieC() {
       
             <h1>Galerie de cartes</h1>
             <p>Cette Section présente la galerie des séquences VFX réalisées ainsi que des informations sommaires sur chacune d'entre elles, les techniques de tournage nécéssaires à la création et les logiciels utilisés à la réalisation. Dans la globalité, ce sont des VFX avec des incrustations de moi sur fond vert et du tracking via des accessoires et des techniques plus avancées d'after effects.</p>
+            <div className="RechercheFiltre">
+              <input
+                type="text"
+                placeholder="Rechercher une carte..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="input-recherche"
+              />
+              <select value={filter} onChange={e => setFilter(e.target.value)} className="select-filtre">
+                <option value="">Tous les logiciels</option>
+                {allSoftwares.map((soft, idx) => (
+                  <option value={soft} key={idx}>{soft}</option>
+                ))}
+              </select>
+            </div>
           </motion.section>
 
           <motion.section className="GrilleCartes" 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}>
-            {CartesVFX.map((carte, index) => (
-              <React.Fragment key={index}>
-                <article key={index} className={`Carte ${activeCard === index ? 'active' : ''}`} onClick={() => handleCardClick(index)}>
-                  <section className="ContenueCarte">
-                    <h4 className="TitreCarte">{carte.titre}</h4>
-                    <img className="Decor" src={carte.image} alt={carte.titre} />
-                    <div className="Pied2Carte">
-                      {carte.icones.map((icone, i) => (
-                        <img src={icone} className={`BulleLog ${icone}`} alt={`Icône ${i}`} key={i}/>
-                      ))}
-                    </div>
-                  </section>
-                </article>
-                
-                {activeCard === index && (
-                  <motion.div className="LecteurVideoMobile" 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
-                    transition={{ duration: 0.25 }}>
-                    <h4 className="TitreInfoCarteV">{activeCardInfo.titre}</h4>
-                    <video ref={videoRef} src={CartesVFX[activeCard].video} controls autoPlay />
-                    <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
-                    <div className="Pied2PageInfoCarteV">
-                      <section className="BlocLog">
-                      {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
-                        <section key={i} className="logicielUtil">
-                          <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} key={i} />
-                          <h5>{log}</h5>
+            {filteredCartes.map((carte, index) => {
+              // Trouver l'index réel dans CartesVFX
+              const realIndex = CartesVFX.findIndex(c => c.titre === carte.titre);
+              return (
+                <React.Fragment key={realIndex}>
+                  <article key={realIndex} className={`Carte ${activeCard === realIndex ? 'active' : ''}`} onClick={() => handleCardClick(realIndex)}>
+                    <section className="ContenueCarte">
+                      <h4 className="TitreCarte">{carte.titre}</h4>
+                      <img className="Decor" src={carte.image} alt={carte.titre} />
+                      <div className="Pied2Carte">
+                        {carte.icones.map((icone, i) => (
+                          <img src={icone} className={`BulleLog ${icone}`} alt={`Icône ${i}`} key={i}/>
+                        ))}
+                      </div>
+                    </section>
+                  </article>
+                  {activeCard === realIndex && (
+                    <motion.div className="LecteurVideoMobile" 
+                      initial={{ opacity: 0 }} 
+                      animate={{ opacity: 1 }} 
+                      transition={{ duration: 0.25 }}>
+                      <h4 className="TitreInfoCarteV">{activeCardInfo.titre}</h4>
+                      <video ref={videoRef} src={CartesVFX[activeCard].video} controls autoPlay />
+                      <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
+                      <div className="Pied2PageInfoCarteV">
+                        <section className="BlocLog">
+                        {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
+                          <section key={i} className="logicielUtil">
+                            <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${activeCardInfo.nomLog ? activeCardInfo.nomLog[i] : i}`} key={i} />
+                            <h5>{log}</h5>
+                          </section>
+                        ))}
                         </section>
-                      ))}
-                      </section>
-                    </div>
-                  </motion.div>
-                )}
-              </React.Fragment>
-            ))}
+                        <div className="QRCodeBloc">
+                          <span>QR Code :</span>
+                          <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={80} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </React.Fragment>
+              );
+            })}
           </motion.section>
 
 
@@ -171,11 +206,15 @@ function GalerieC() {
                   <section className="BlocLog">
                   {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
                     <section key={i} className="logicielUtil">
-                      <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${i}`} key={i} />
+                      <img className="BulleLog" src={activeCardInfo.icones[i]} alt={`Icône ${activeCardInfo.nomLog ? activeCardInfo.nomLog[i] : i}`} key={i} />
                       <h5>{log}</h5>
                     </section>
                   ))}
                   </section>
+                  <div className="QRCodeBloc">
+                    <span>QR Code :</span>
+                    <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={100} />
+                  </div>
                 </div>
               </article>
 

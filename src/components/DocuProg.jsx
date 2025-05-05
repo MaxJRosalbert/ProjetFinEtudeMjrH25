@@ -57,12 +57,12 @@ function DocuProg() {
         </label>
         <input type="checkbox" id="MenuDocu4" />
         
-        <section className="ContenuDoc">:
-          <p>Pour Commencer, j'ai conçu une maquette numérique de mon application Web sur Adobe Xd. Ensuite, le développement de l'application web a été réalisé sur VsCode et finalement son hébergement est assuré par GitHub.</p>
+        <section className="ContenuDoc">
+          <p>Pour commencer, j'ai conçu une maquette numérique de mon application web sur Adobe Xd. Ensuite, le développement de l'application web a été réalisé sur VS Code et finalement son hébergement est assuré par GitHub.</p>
           <ul>
-            <img src={Xd} alt="Xd" />
-            <img src={VsCode} alt="VsCode" />
-            <img src={GitHub} alt="GitHub" />
+            <li><img src={Xd} alt="Logo Adobe Xd" /></li>
+            <li><img src={VsCode} alt="Logo VS Code" /></li>
+            <li><img src={GitHub} alt="Logo GitHub" /></li>
           </ul>
         </section>
       </motion.article>
@@ -84,11 +84,11 @@ function DocuProg() {
         <section className="ContenuDoc">
           <p>Le développement initial de l'application web reposait sur une architecture HTML, Sass et JavaScript. Afin d'optimiser les performances et la complexité du code, une refonte a été effectuée avec React, JSX et Vite.</p>
           <ul>
-            <img src={Html} alt="Html" />
-            <img src={Sass} alt="Sass" />
-            <img src={JavaScript} alt="JavaScript" />
-            <img src={CReact} alt="CReact" />
-            <img src={Vitejs} alt="Vitejs" />
+            <li><img src={Html} alt="Html" /></li>
+            <li><img src={Sass} alt="Sass" /></li>
+            <li><img src={JavaScript} alt="JavaScript" /></li>
+            <li><img src={CReact} alt="CReact" /></li>
+            <li><img src={Vitejs} alt="Vitejs" /></li>
           </ul>
         </section>
       </motion.article>

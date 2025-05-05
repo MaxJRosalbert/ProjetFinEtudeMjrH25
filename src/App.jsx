@@ -1,5 +1,6 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header.jsx";
 import HeaderDft from "./components/HeaderDft.jsx";
 import FooterStd from "./components/Footer.jsx";
@@ -9,30 +10,29 @@ import Accueil from "./components/Accueil.jsx";
 import DocuProg from "./components/DocuProg.jsx";
 import APropos from "./components/APropos.jsx";
 import Documentation from "./components/Documentation.jsx";
-// import './App.scss';
 import './styles/styles.scss';
 
 function App() {
-
+  const location = useLocation();
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <HeaderDft/>
-          <Routes>
-            <Route path="/" element={<Accueil />} />
-            <Route path="/Accueil" element={<Accueil />} />
-            <Route path="/GalerieC" element={<GalerieC />} />
-            <Route path="/Documentation" element={<Documentation />} />
-            <Route path="/APropos" element={<APropos />} />
-            <Route path="/DocuProg" element={<DocuProg />} />
+    <div className="App">
+      <Header />
+      <main>
+        <HeaderDft />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><Accueil /></motion.div>} />
+            <Route path="/Accueil" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><Accueil /></motion.div>} />
+            <Route path="/GalerieC" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><GalerieC /></motion.div>} />
+            <Route path="/Documentation" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><Documentation /></motion.div>} />
+            <Route path="/APropos" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><APropos /></motion.div>} />
+            <Route path="/DocuProg" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><DocuProg /></motion.div>} />
           </Routes>
-          <FooterDft/>
-        </main>
-        <FooterStd />
-      </div>
-    </Router>
+        </AnimatePresence>
+        <FooterDft />
+      </main>
+      <FooterStd />
+    </div>
   );
 }
 

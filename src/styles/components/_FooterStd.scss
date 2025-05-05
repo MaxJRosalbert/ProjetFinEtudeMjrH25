@@ -1,5 +1,6 @@
 .FooterStd {/********** Footer Standard **********/
-  height: 7.5vh;
+  width: 100vw;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -8,24 +9,53 @@
   font-size: 0.9rem;
 
   .BtnNav{
-    width: 35vw;
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
 
-    li{
-      width: 35px;
-      aspect-ratio: 1;
-      box-shadow: $OmbrePS;
+    li {
+      list-style: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      position: relative;
       cursor: pointer;
+      white-space: nowrap;
+      width: 75px;
+      aspect-ratio: $AspectRatioItem;
+      border-radius: $PetitBordureBento;
+      background-color: $CouleurAccent2;
+      box-shadow: $OmbrePc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $TransitionDefault;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: $TransitionDefault;
+        border-radius: $PetitBordureBento;
+      }
+
+      &:hover::before {
+        background: linear-gradient(to bottom, $CouleurAccent2, $CouleurSecondaire);
+        box-shadow: $OmbrePS;
+        transform: scale(1.1);
+      }
 
       a {
         text-decoration: none;
-        color: $CouleurTexteS;
-        font-weight: bold;
+        font-weight: bolder;
+        color: $CouleurTexteC;
+      }
     }
-    } 
   }
   
 

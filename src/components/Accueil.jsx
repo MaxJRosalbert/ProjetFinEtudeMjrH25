@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 // import "../styles/Accueil.scss";
+// import '../styles/pages/interactivites';
 import '../styles/styles.scss';
 
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
@@ -17,7 +19,7 @@ function Accueil() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}>
         <h1>Bienvenue sur le projet MJR</h1>
-        <p>Bienvenue sur le site de mon projet de fin d'étude</p>
+        <p>Bienvenue sur le site de mon projet de fin d'études.</p>
       </motion.article>
 
       <motion.article 
@@ -44,19 +46,19 @@ function Accueil() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.75 }}>
-        <h2><Link to="/Documentation">infos Sommaires</Link></h2>
+        <h2><Link to="/Documentation">Infos sommaires</Link></h2>
         <section>
           <div>
-            <h6>11 Logiciels </h6>
-            <p>Vscode / GitHub / Houdini / Xd / Photoshop / Adobe express / after effect / premiere pro / media encoder / M.Copilot / Handbrake</p>
+            <h6>11 logiciels</h6>
+            <p>VS Code / GitHub / Houdini / Xd / Photoshop / Adobe Express / After Effects / Premiere Pro / Media Encoder / Copilot / Handbrake</p>
           </div>
           <div>
             <h6>6 semaines de conception</h6>
-            <p>8 rencontres / 4 Sprints / 3 TPs de concept / 1 présentation</p>
+            <p>8 rencontres / 4 sprints / 3 TPs de concept / 1 présentation</p>
           </div>
           <div>
             <h6>3 / 6 cartes VFX</h6>
-            <p>3 vfx via Houdini / 3 via After Effects + Premiere pro</p>
+            <p>3 VFX via Houdini / 3 via After Effects + Premiere Pro</p>
           </div>
         </section>
       </motion.article>

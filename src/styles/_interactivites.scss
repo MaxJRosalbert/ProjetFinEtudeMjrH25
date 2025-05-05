@@ -1,0 +1,45 @@
+.RechercheFiltre {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.input-recherche {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #42d8ff;
+  font-size: 1rem;
+  outline: none;
+  min-width: 200px;
+}
+.select-filtre {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ff9e42;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  color: #242424;
+}
+.QRCodeBloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.QRCodeBloc span {
+  font-size: 0.95rem;
+  color: #242424;
+}
+@media (max-width: 600px) {
+  .RechercheFiltre {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .input-recherche, .select-filtre {
+    min-width: 120px;
+    width: 100%;
+  }
+}

@@ -90,7 +90,7 @@
       display: none;
       padding: $PaddindDefaut;
       grid-area: 2 / 1 / 3 / 3;
-      overflow-y: scroll;
+      overflow-y: auto;
 
       h3{
         color: $CouleurAccent2;
