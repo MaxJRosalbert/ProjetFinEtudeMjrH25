@@ -1,0 +1,25 @@
+// Media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) { @content; }
+  } @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Utilitaires
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition($props...) {
+  transition: $props $transition;
+}

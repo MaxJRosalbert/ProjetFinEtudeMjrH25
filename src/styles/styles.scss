@@ -1,3 +1,4 @@
+@import "_mixins.scss";
 @import './interactivites.scss';
 //Importer les composants
 @import "../components/Variables.scss";
@@ -17,10 +18,10 @@
 @import "pages/Apropos";
 
 
+
+@import "hamburgerMenu.scss";
+@import "backToTop.scss";
 @import url('https://fonts.cdnfonts.com/css/masque');
-
-                
-
 
 * {
   margin: 0;

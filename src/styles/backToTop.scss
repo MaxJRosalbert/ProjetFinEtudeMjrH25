@@ -1,0 +1,35 @@
+@import "../components/Variables.scss";
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: orange;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1200;
+  opacity: 0.85;
+  transition: background 0.2s, opacity 0.2s;
+}
+.back-to-top:hover, .back-to-top:focus {
+  background: $CouleurAccent2;
+  opacity: 1;
+}
+@media (max-width: $breakpoint-sm) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import "../styles/Apropos.scss";
 import ImgMax from '../assets/img/Mjr.jpg';
 import '../styles/styles.scss';
-// import '../styles/pages/interactivites.scss';
 
 function APropos() {
   return (

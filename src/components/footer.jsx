@@ -6,8 +6,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import SubjectIcon from '@mui/icons-material/Subject';
 import PersonIcon from '@mui/icons-material/Person';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
-// import "../styles/FooterStd.scss";
-// import '../styles/styles.scss';
 
 function FooterStd() {
   // Correction : initialisation correcte de l'état à partir du localStorage
@@ -56,12 +54,12 @@ function FooterStd() {
   return (
     <footer className="FooterStd">
       <ul className="BtnNav">
-        <li><Link to="/Accueil" aria-label="Accueil"><HomeIcon fontSize="large" /></Link></li>
-        <li><Link to="/GalerieC" aria-label="Galerie"><LocalLibraryIcon fontSize="large" /></Link></li>
-        <li><Link to="/DocuProg" aria-label="Documentation programmation"><CodeIcon fontSize="large" /></Link></li>
-        <li><Link to="/Documentation" aria-label="Documentation"><SubjectIcon fontSize="large" /></Link></li>
-        <li><Link to="/APropos" aria-label="À propos"><PersonIcon fontSize="large" /></Link></li>
-        <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
+        <li><Link to="/Accueil"><HomeIcon fontSize="large" /></Link></li>
+        <li><Link to="/GalerieC"><LocalLibraryIcon fontSize="large" /></Link></li>
+        <li><Link to="/DocuProg"><CodeIcon fontSize="large" /></Link></li>
+        <li><Link to="/Documentation"><SubjectIcon fontSize="large" /></Link></li>
+        <li><Link to="/APropos"><PersonIcon fontSize="large" /></Link></li>
+        <li onClick={handleToggleHeaderStd} className="BtnSwitch" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
           {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" />}
         </li>
       </ul>

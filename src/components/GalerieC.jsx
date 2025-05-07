@@ -27,12 +27,18 @@ import TesseractVideo from "../assets/video/Tentative Tesseract.mp4";
 
 import '../styles/styles.scss';
 
+const images = [
+  // ... liste d'images ou import dynamique ...
+];
+const IMAGES_PER_PAGE = 12;
+
 function GalerieC() {
     const [activeCard, setActiveCard] = useState(null);
     const [activeCardInfo, setActiveCardInfo] = useState({});
     const videoRef = useRef(null);
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("");
+    const [page, setPage] = useState(1);
 
     const CartesVFX = [
       { 
@@ -101,6 +107,12 @@ function GalerieC() {
       return matchTitre && matchLog;
     });
 
+    const totalPages = Math.ceil(filteredCartes.length / IMAGES_PER_PAGE);
+    const paginatedCartes = filteredCartes.slice(
+      (page - 1) * IMAGES_PER_PAGE,
+      page * IMAGES_PER_PAGE
+    );
+
     const handleCardClick = (index) => {
       if (activeCard === index) {
         setActiveCard(null);
@@ -129,10 +141,10 @@ function GalerieC() {
                 type="text"
                 placeholder="Rechercher une carte..."
                 value={search}
-                onChange={e => setSearch(e.target.value)}
+                onChange={e => { setSearch(e.target.value); setPage(1); }}
                 className="input-recherche"
               />
-              <select value={filter} onChange={e => setFilter(e.target.value)} className="select-filtre">
+              <select value={filter} onChange={e => { setFilter(e.target.value); setPage(1); }} className="select-filtre">
                 <option value="">Tous les logiciels</option>
                 {allSoftwares.map((soft, idx) => (
                   <option value={soft} key={idx}>{soft}</option>
@@ -145,7 +157,7 @@ function GalerieC() {
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}>
-            {filteredCartes.map((carte, index) => {
+            {paginatedCartes.map((carte, index) => {
               // Trouver l'index réel dans CartesVFX
               const realIndex = CartesVFX.findIndex(c => c.titre === carte.titre);
               return (
@@ -153,7 +165,7 @@ function GalerieC() {
                   <article key={realIndex} className={`Carte ${activeCard === realIndex ? 'active' : ''}`} onClick={() => handleCardClick(realIndex)}>
                     <section className="ContenueCarte">
                       <h4 className="TitreCarte">{carte.titre}</h4>
-                      <img className="Decor" src={carte.image} alt={carte.titre} />
+                      <img className="Decor" src={carte.image} alt={carte.titre} loading="lazy" />
                       <div className="Pied2Carte">
                         {carte.icones.map((icone, i) => (
                           <img src={icone} className={`BulleLog ${icone}`} alt={`Icône ${i}`} key={i}/>
@@ -190,6 +202,11 @@ function GalerieC() {
             })}
           </motion.section>
 
+          <div className="galerie-pagination">
+            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>Précédent</button>
+            <span>Page {page} / {totalPages}</span>
+            <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>Suivant</button>
+          </div>
 
           {activeCard !== null && (
             <motion.div className="LecteurVideoD" 
@@ -202,6 +219,10 @@ function GalerieC() {
               <article className="InfoCarteV">
                 <h4 className="TitreInfoCarteV">{activeCardInfo.titre}</h4>
                 <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
+                <div className="QRCodeBloc">
+                  <span>QR Code :</span>
+                  <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={100} />
+                </div>
                 <div className="Pied2PageInfoCarteV">
                   <section className="BlocLog">
                   {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
@@ -211,10 +232,6 @@ function GalerieC() {
                     </section>
                   ))}
                   </section>
-                  <div className="QRCodeBloc">
-                    <span>QR Code :</span>
-                    <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={100} />
-                  </div>
                 </div>
               </article>
 

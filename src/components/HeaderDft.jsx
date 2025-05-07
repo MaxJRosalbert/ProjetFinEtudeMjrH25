@@ -72,15 +72,15 @@ function HeaderDft() {
       </div>
 
       <ul className="menu">
-        <li><Link to="/Accueil" aria-label="Accueil"><span>Accueil</span></Link></li>
-        <li><Link to="/GalerieC" aria-label="Galerie"><span>Galerie</span></Link></li>
-        <li><Link to="/DocuProg" aria-label="Aspect programmation"><span>Aspect Prog</span></Link></li>
-        <li><Link to="/Documentation" aria-label="Documentation"><span>Documentation</span></Link></li>
-        <li><Link to="/APropos" aria-label="À propos"><span>À Propos</span></Link></li>
-        <li onClick={toggleTheme} className="theme-toggle" aria-label="Changer le thème" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') toggleTheme(); }}>
+        <li><Link to="/Accueil"><span>Accueil</span></Link></li>
+        <li><Link to="/GalerieC"><span>Galerie</span></Link></li>
+        <li><Link to="/DocuProg"><span>Aspect Prog</span></Link></li>
+        <li><Link to="/Documentation"><span>Documentation</span></Link></li>
+        <li><Link to="/APropos"><span>À Propos</span></Link></li>
+        <li onClick={toggleTheme} className="theme-toggle" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') toggleTheme(); }}>
           {theme === 'clair' ? <Brightness3Icon fontSize="large" color="primary" /> : <BrightnessHighIcon fontSize="large" color="action"/>}
         </li>
-        <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
+        <li onClick={handleToggleHeaderStd} className="BtnSwitch" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
           {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" color="action"/>}
         </li>
       </ul>

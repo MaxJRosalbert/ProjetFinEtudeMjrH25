@@ -62,12 +62,12 @@ function FooterDft() {
   return (
     <nav className="footerDft">
       <ul className="BtnNav">
-        <li><Link to="/Accueil" aria-label="Accueil"><HomeIcon fontSize="large" /></Link></li>
-        <li><Link to="/GalerieC" aria-label="Galerie"><LocalLibraryIcon fontSize="large" /></Link></li>
-        <li><Link to="/DocuProg" aria-label="Documentation programmation"><CodeIcon fontSize="large" /></Link></li>
-        <li><Link to="/Documentation" aria-label="Documentation"><SubjectIcon fontSize="large" /></Link></li>
-        <li><Link to="/APropos" aria-label="À propos"><PersonIcon fontSize="large" /></Link></li>
-        <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
+        <li><Link to="/Accueil"><HomeIcon fontSize="large" /></Link></li>
+        <li><Link to="/GalerieC"><LocalLibraryIcon fontSize="large" /></Link></li>
+        <li><Link to="/DocuProg"><CodeIcon fontSize="large" /></Link></li>
+        <li><Link to="/Documentation"><SubjectIcon fontSize="large" /></Link></li>
+        <li><Link to="/APropos"><PersonIcon fontSize="large" /></Link></li>
+        <li onClick={handleToggleHeaderStd} className="BtnSwitch" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
           {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" />}
         </li>
       </ul>

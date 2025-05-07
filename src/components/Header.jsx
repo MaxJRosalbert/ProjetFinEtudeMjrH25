@@ -18,10 +18,6 @@ function Header() {
       document.body.classList.add(theme === 'clair' ? 'theme-clair' : 'theme-sombre');
     }, [theme]);
   
-    const toggleTheme = () => {
-      setTheme(theme === 'clair' ? 'sombre' : 'clair');
-    };
-
     useEffect(() => {
       const applyToggle = (state) => {
         const headerStd = document.querySelector('.HeaderStd');
@@ -67,24 +63,36 @@ function Header() {
       // Suppression du StorageEvent manuel, la synchro se fait via l'événement 'storage'
     };
 
+    const links = [
+      { to: "/Accueil", label: "Accueil" },
+      { to: "/GalerieC", label: "Galerie" },
+      { to: "/Documentation", label: "Documentation" },
+      { to: "/APropos", label: "À propos" },
+      { to: "/DocuProg", label: "DocuProg" },
+    ];
+
   return (
     <header className="HeaderStd">
-      <div className="logo">
-        <Link to="/Accueil"><img src={Logo} alt="Logo du site MJR" /></Link>
+      <div className="header-content">
+        <div className="logo">
+          <Link to="/Accueil"><img src={Logo} alt="Logo du site MJR" /></Link>
+        </div>
+        <nav className="desktop-nav">
+          <ul className="menu">
+            <li><Link to="/Accueil" aria-label="Accueil">Accueil</Link></li>
+            <li><Link to="/GalerieC" aria-label="Galerie">Galerie</Link></li>
+            <li><Link to="/DocuProg" aria-label="Aspect programmation">Aspect Prog</Link></li>
+            <li><Link to="/Documentation" aria-label="Documentation">Documentation</Link></li>
+            <li><Link to="/APropos" aria-label="À propos">À Propos</Link></li>
+            <li onClick={() => setTheme(theme === 'clair' ? 'sombre' : 'clair')} className="theme-toggle" aria-label="Changer le thème" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setTheme(theme === 'clair' ? 'sombre' : 'clair'); }}>
+              {theme === 'clair' ? <Brightness3Icon fontSize="large" color="primary" /> : <BrightnessHighIcon fontSize="large" color="action"/>}
+            </li>
+            <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
+              {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" color="action"/>}
+            </li>
+          </ul>
+        </nav>
       </div>
-      <ul className="menu">
-        <li><Link to="/Accueil" aria-label="Accueil">Accueil</Link></li>
-        <li><Link to="/GalerieC" aria-label="Galerie">Galerie</Link></li>
-        <li><Link to="/DocuProg" aria-label="Aspect programmation">Aspect Prog</Link></li>
-        <li><Link to="/Documentation" aria-label="Documentation">Documentation</Link></li>
-        <li><Link to="/APropos" aria-label="À propos">À Propos</Link></li>
-        <li onClick={toggleTheme} className="theme-toggle" aria-label="Changer le thème" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') toggleTheme(); }}>
-          {theme === 'clair' ? <Brightness3Icon fontSize="large" color="primary" /> : <BrightnessHighIcon fontSize="large" color="action"/>}
-        </li>
-        <li onClick={handleToggleHeaderStd} className="BtnSwitch" aria-label="Changer l'affichage du header/footer" tabIndex={0} role="button" onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') handleToggleHeaderStd(); }}>
-          {toggleHeaderStd ? <FlipCameraAndroidIcon fontSize="large" color="primary" /> : <FlipCameraAndroidIcon fontSize="large" color="action"/>}
-        </li>
-      </ul>
     </header>
   );
 }

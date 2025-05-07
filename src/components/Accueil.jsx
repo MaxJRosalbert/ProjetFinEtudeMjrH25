@@ -9,7 +9,6 @@ import '../styles/styles.scss';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import CodeIcon from '@mui/icons-material/Code';
 
-
 function Accueil() {
   return (
     <section className="Accueil">
@@ -62,8 +61,6 @@ function Accueil() {
           </div>
         </section>
       </motion.article>
-      
-
     </section>
   );
 }

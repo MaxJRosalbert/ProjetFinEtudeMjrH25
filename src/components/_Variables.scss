@@ -50,3 +50,25 @@ $TransitionDefault: 0.25s; // Durée de transition par défaut
 $AspectRatioItem: 1; // Ratio d'aspect pour les éléments de navigation
 $FormatV: 9/16;
 $FormatH: 16/9;
+
+// Variables de couleurs, espacements, etc.
+$color-primary: #2d6cdf;
+$color-secondary: #f5f5f5;
+$color-dark: #181818;
+$color-light: #fff;
+$color-accent: #ffb400;
+$color-error: #e74c3c;
+$color-success: #27ae60;
+$color-info: #3498db;
+
+$font-main: 'Inter', Arial, sans-serif;
+$border-radius: 8px;
+$transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1600px; // Ajout d'un breakpoint pour les très grands écrans

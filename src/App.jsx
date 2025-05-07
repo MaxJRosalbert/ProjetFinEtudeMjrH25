@@ -10,6 +10,7 @@ import Accueil from "./components/Accueil.jsx";
 import DocuProg from "./components/DocuProg.jsx";
 import APropos from "./components/APropos.jsx";
 import Documentation from "./components/Documentation.jsx";
+import NotFound from "./components/404.jsx";
 import './styles/styles.scss';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/Documentation" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><Documentation /></motion.div>} />
             <Route path="/APropos" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><APropos /></motion.div>} />
             <Route path="/DocuProg" element={<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}><DocuProg /></motion.div>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
         <FooterDft />
