@@ -185,7 +185,7 @@ function GalerieC() {
                       <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
                       <div className="QRCodeBloc">
                         <span>QR Code :</span>
-                        <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={80} />
+                        <QRCodeCanvas value={`${window.location.origin}/vfx/${encodeURIComponent(activeCardInfo.titre)}`} size={80} />
                       </div>
                       <div className="Pied2PageInfoCarteV">
                         <section className="BlocLog">
@@ -223,7 +223,7 @@ function GalerieC() {
                 <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
                 <div className="QRCodeBloc">
                   <span>QR Code :</span>
-                  <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={100} />
+                  <QRCodeCanvas value={`${window.location.origin}/vfx/${encodeURIComponent(activeCardInfo.titre)}`} size={100} />
                 </div>
                 <div className="Pied2PageInfoCarteV">
                   <section className="BlocLog">
