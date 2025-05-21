@@ -28,6 +28,7 @@
       font-weight: bold;
       position: relative;
       cursor: pointer;
+      pointer-events: auto;
       white-space: nowrap;
       width: 75px;
       aspect-ratio: $AspectRatioItem;
@@ -51,16 +52,27 @@
         border-radius: $PetitBordureBento;
       }
 
+      &:hover {
+        z-index: 2;
+        transform: translateY(-4px) scale(1.07);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), $OmbrePS;
+      }
       &:hover::before {
-        background: linear-gradient(to bottom, $CouleurAccent2, $CouleurSecondaire);
-        box-shadow: $OmbrePS;
-        transform: scale(1.1);
+        background: linear-gradient(120deg, $CouleurAccent2 60%, $CouleurSecondaire 100%);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), $OmbrePS;
+        transform: scale(1.12);
       }
 
       a {
         text-decoration: none;
         font-weight: bolder;
         color: $CouleurTexteC;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
       }
     }
   }

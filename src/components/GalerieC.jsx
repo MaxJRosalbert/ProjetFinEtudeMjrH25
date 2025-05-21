@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { QRCodeCanvas } from 'qrcode.react';
 
 // Icons de Logiciels
@@ -179,8 +181,12 @@ function GalerieC() {
                       animate={{ opacity: 1 }} 
                       transition={{ duration: 0.25 }}>
                       <h4 className="TitreInfoCarteV">{activeCardInfo.titre}</h4>
-                      <video ref={videoRef} src={CartesVFX[activeCard].video} controls autoPlay />
+                      <video ref={videoRef} src={CartesVFX[activeCard].video} controls />
                       <p className="TxtInfoCarteV">{activeCardInfo.info}</p>
+                      <div className="QRCodeBloc">
+                        <span>QR Code :</span>
+                        <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={80} />
+                      </div>
                       <div className="Pied2PageInfoCarteV">
                         <section className="BlocLog">
                         {activeCardInfo.nomLog && activeCardInfo.nomLog.map((log, i) => (
@@ -190,10 +196,6 @@ function GalerieC() {
                           </section>
                         ))}
                         </section>
-                        <div className="QRCodeBloc">
-                          <span>QR Code :</span>
-                          <QRCodeCanvas value={window.location.href + `#/${encodeURIComponent(activeCardInfo.titre)}`} size={80} />
-                        </div>
                       </div>
                     </motion.div>
                   )}
@@ -203,9 +205,9 @@ function GalerieC() {
           </motion.section>
 
           <div className="galerie-pagination">
-            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>Précédent</button>
+            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}><ArrowBackIosIcon /></button>
             <span>Page {page} / {totalPages}</span>
-            <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>Suivant</button>
+            <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}><ArrowForwardIosIcon /></button>
           </div>
 
           {activeCard !== null && (
@@ -214,7 +216,7 @@ function GalerieC() {
               animate={{ opacity: 1 }} 
               transition={{ duration: 0.25 }}>
               
-              <video ref={videoRef} src={CartesVFX[activeCard].video} controls autoPlay />
+              <video ref={videoRef} src={CartesVFX[activeCard].video} controls  />
               
               <article className="InfoCarteV">
                 <h4 className="TitreInfoCarteV">{activeCardInfo.titre}</h4>
