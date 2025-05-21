@@ -66,7 +66,6 @@ function Documentation() {
         transition={{ duration: 0.25 }}>
   
         <h1>Documentation globale</h1>
-        <p>Bienvenue sur notre site. Nous sommes une équipe passionnée dédiée à fournir du contenu de qualité.</p>
       </motion.section>
 
       <motion.article 

@@ -15,7 +15,7 @@
 
 .Accueil {
   opacity: 0.75;
-
+  
   .AccPresentation {
     width: $WBento;
     margin: 2rem auto;
@@ -103,16 +103,17 @@
     border-radius: $BordureBento;
     box-shadow: $OmbrePS;
     text-align: center;
-
+    
     section {
       display: flex;
       justify-content: space-around;
+      margin: 2rem auto;
       div {
         color: $CouleurTexteS;
         font-size: 2rem;
-        margin-bottom: 1rem;
         width: 30%;
-
+        margin: 1rem;
+        
         p {
           font-size: 1.1rem;
           color: $CouleurTexteS;
@@ -159,7 +160,6 @@
 
     .AccinfoVrac {
       padding: 0.5rem;
-      // margin: 0é;
 
 
       section {
